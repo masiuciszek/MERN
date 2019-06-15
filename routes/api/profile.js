@@ -9,7 +9,7 @@ const auth = require('../../middleware/auth');
 // @desc Get current users profile
 // @access private
 
-router.get('/', async (req, res) => {
+router.get('/me', auth, async (req, res) => {
   try {
     const profile = await Profile.findOne({ user: req.user.id }).populate(
       'user',
@@ -21,6 +21,7 @@ router.get('/', async (req, res) => {
         .status(400)
         .json({ msg: 'there is no profile for this user!!!' });
     }
+    res.json(profile);
   } catch (error) {
     console.error(error.message);
     res.status(500).send('Server Error');
