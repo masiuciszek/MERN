@@ -4,6 +4,7 @@ import { REGISTER_FAIL, REGISTER_SUCCESS } from './types';
 
 // Register user
 
+
 export const registerUser = ({ name, email, password }) => async dispatch => {
   const config = {
     headers: {

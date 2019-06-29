@@ -25,6 +25,7 @@ const Register = ({ setAlert, registerUser }) => {
     } else {
       registerUser({ name, email, password });
     }
+
     setFormData({
       name: '',
       email: '',
