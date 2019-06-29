@@ -5,11 +5,11 @@ import links from './links';
 const Footer = () => {
   let a;
   return (
-    <footer className="bg-dark">
-      <Link to="/">
+    <footer className="bg-dark footer">
+      <Link to="/" className="footer-title">
         <i className="fas fa-code" /> DevConnector
       </Link>
-      <ul>
+      <ul className="footer-list">
         {links.map((link, i) => (
           <li key={i}>
             <Link to={link.to}>{link.text}</Link>
