@@ -28,7 +28,7 @@ const Login = ({ login, isAuthenticated }) => {
 
   return (
     <div className="push-down">
-      <h1 className="large text-primary">Log in</h1>
+      <h1 className="large text-primary">Sign in</h1>
       <p className="lead">
         <i className="fas fa-user" /> Sign in to Your Account
       </p>
