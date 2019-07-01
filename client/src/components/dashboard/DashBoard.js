@@ -4,17 +4,46 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { getCurrentProfile } from '../../actions/profile';
+import Spinner from '../layout/Spinner';
 
-const DashBoard = ({ getCurrentProfile, auth, profile }) => {
+const DashBoard = ({
+  getCurrentProfile,
+  auth: { user },
+  profile: { profile, loading },
+}) => {
   useEffect(() => {
     getCurrentProfile();
   }, []);
 
   return (
-    <div className="push-down">
-      <h1>DashBoard</h1>
-    </div>
+    // if profile is null and still loading
+    loading && profile === null ? (
+      <Spinner />
+    ) : (
+      <div className="push-down">
+        <h1 className="large text-primary">DashBoard</h1>{' '}
+        <p className="lead">
+          <i className="fa fa-user" /> Welcome {user && user.name}
+          {/* if user then show user name */}
+        </p>
+        {profile !== null ? (
+          <>
+            {' '}
+            <h3>Has</h3>{' '}
+          </>
+        ) : (
+          <>
+            <h3>Yoy have not yes set up a Profile</h3>
+            <Link to="/create-profile" className="btn btn-primary my-1">
+              {' '}
+              Create Profile{' '}
+            </Link>
+          </>
+        )}
+      </div>
+    )
   );
 };
 
