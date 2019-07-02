@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { createProfile } from '../../actions/profile';
 
-const CreateProfile = () => {
+const CreateProfile = ({ createProfile, history }) => {
   const [showSocial, setShowSocial] = useState(false);
   const [formData, setFormData] = useState({
     company: '',
@@ -39,6 +41,11 @@ const CreateProfile = () => {
   };
   const handleChange = e =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    createProfile(formData, history);
+  };
   return (
     <div className="push-down">
       <h1 className="large text-primary">Create Your Profile</h1>
@@ -47,7 +54,7 @@ const CreateProfile = () => {
         profile stand out
       </p>
       <small>* = required field</small>
-      <form className="form">
+      <form className="form" onSubmit={handleSubmit}>
         <div className="form-group">
           <select name="status" value={status} onChange={e => handleChange(e)}>
             <option value="0">* Select Professional Status</option>
@@ -209,6 +216,14 @@ const CreateProfile = () => {
   );
 };
 
-CreateProfile.propTypes = {};
+CreateProfile.propTypes = {
+  createProfile: PropTypes.func.isRequired,
+};
 
-export default CreateProfile;
+const mapStateToProps = state => {};
+
+export default connect(
+  null,
+  { createProfile }
+)(withRouter(CreateProfile));
+// allows us to use the history object from the react-router
