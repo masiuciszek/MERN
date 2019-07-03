@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getCurrentProfile } from '../../actions/profile';
 import Spinner from '../layout/Spinner';
+import DashBoardAction from './DashBoardAction';
 
 const DashBoard = ({
   getCurrentProfile,
@@ -31,7 +32,9 @@ const DashBoard = ({
         {profile !== null ? (
           <>
             {' '}
-            <h3>Has</h3>{' '}
+            <h3>
+              <DashBoardAction />
+            </h3>{' '}
           </>
         ) : (
           <>
