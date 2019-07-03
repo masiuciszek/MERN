@@ -6,11 +6,11 @@ const DashBoardAction = () => (
     <Link to="/edit-profile" className="btn btn-light">
       <i className="fas fa-user-circle text-primary"></i> Edit Profile
     </Link>
-    <Link to="" className="btn btn-light">
-      <i className="/add-experience"></i> Add Experience
+    <Link to="/add-experience" className="btn btn-light">
+      <i className="fab fa-black-tie text-primary"></i> Add Experience
     </Link>
-    <Link to="" className="btn btn-light">
-      <i className="/add-education"></i> Add Education
+    <Link to="/add-education" className="btn btn-light">
+      <i className="fas fa-graduation-cap text-primary"></i> Add Education
     </Link>
   </div>
 );
