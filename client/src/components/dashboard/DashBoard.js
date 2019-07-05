@@ -8,6 +8,8 @@ import { Link } from 'react-router-dom';
 import { getCurrentProfile } from '../../actions/profile';
 import Spinner from '../layout/Spinner';
 import DashBoardAction from './DashBoardAction';
+import Experience from './Experience';
+import Education from './Education';
 
 const DashBoard = ({
   getCurrentProfile,
@@ -34,6 +36,8 @@ const DashBoard = ({
             {' '}
             <h3>
               <DashBoardAction />
+              <Experience experience={profile.experience} />
+              <Education education={profile.education} />
             </h3>{' '}
           </>
         ) : (
