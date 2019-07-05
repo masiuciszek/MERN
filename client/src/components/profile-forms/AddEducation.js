@@ -97,7 +97,7 @@ const AddEducation = ({ addEducation, history }) => {
                 setToDateDisabled(!toDateDisabled);
               }}
             />{' '}
-            Current Job
+            Current School
           </p>
         </div>
         <div className="form-group">
