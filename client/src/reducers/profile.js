@@ -3,7 +3,7 @@ import {
   GET_PROFILE,
   PROFILE_ERROR,
   UPDATE_PROFILE,
-  GET_ALL_PROFILES,
+  GET_PROFILES,
   GET_REPOS,
 } from '../actions/types';
 
@@ -26,7 +26,7 @@ export default (state = initialState, action) => {
         profile: payload,
         loading: false,
       };
-    case GET_ALL_PROFILES:
+    case GET_PROFILES:
       return {
         ...state,
         profiles: payload,

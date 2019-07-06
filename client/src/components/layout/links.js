@@ -1,6 +1,6 @@
 const links = [
   {
-    to: '/developers',
+    to: '/profiles',
     text: 'developers',
   },
   {
@@ -16,6 +16,10 @@ const links = [
 export default links;
 
 export const landingLinks = [
+  {
+    to: '/profiles',
+    text: 'developers',
+  },
   {
     to: '/register',
     text: 'register',

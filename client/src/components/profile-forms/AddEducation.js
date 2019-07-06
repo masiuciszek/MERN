@@ -2,8 +2,8 @@
 /* eslint-disable no-shadow */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { addEducation } from '../../actions/profile';
 
 const AddEducation = ({ addEducation, history }) => {
@@ -137,4 +137,4 @@ AddEducation.propTypes = {
 export default connect(
   null,
   { addEducation }
-)(AddEducation);
+)(withRouter(AddEducation));

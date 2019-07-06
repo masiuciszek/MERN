@@ -19,6 +19,9 @@ function Navbar({ auth: { isAuthenticated, loading }, logout }) {
   const authLinks = (
     <ul className="navlist">
       <li>
+        <Link to="/profiles">Developers</Link>
+      </li>
+      <li>
         <Link to="/dashboard">
           <i className="fa fa-user" />
           <span className="hide-sm">Dashboard</span>
@@ -47,6 +50,8 @@ function Navbar({ auth: { isAuthenticated, loading }, logout }) {
 
 Navbar.propTypes = {
   logout: PropTypes.func.isRequired,
+  isAuthenticated: PropTypes.bool.isRequired,
+  loading: PropTypes.bool.isRequired,
 };
 
 const mapStateToProps = state => ({

@@ -7,9 +7,7 @@ const PrivateRoute = ({
   component: Component,
   auth: { isAuthenticated, loading },
   ...rest
-}) => {
-  let a;
-  return (
+}) => (
     <Route
       {...rest}
       render={routeProps =>
@@ -21,7 +19,6 @@ const PrivateRoute = ({
       }
     />
   );
-};
 
 PrivateRoute.propTypes = {
   auth: PropTypes.object.isRequired,
