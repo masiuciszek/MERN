@@ -1,9 +1,12 @@
+/* eslint-disable no-shadow */
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Spinner from '../layout/Spinner';
+import ProfileTop from './ProfileTop';
 import { getProfileById } from '../../actions/profile';
+import ProfileAbout from './ProfileAbout';
 
 const Profile = ({
   getProfileById,
@@ -30,6 +33,11 @@ const Profile = ({
                 Edit profile
               </Link>
             )}
+
+          <div className="profile-grid my-1">
+            <ProfileTop profile={profile} />
+            <ProfileAbout profile={profile} />
+          </div>
         </>
       )}
     </div>
@@ -40,6 +48,7 @@ Profile.propTypes = {
   getProfileById: PropTypes.func.isRequired,
   profile: PropTypes.object.isRequired,
   auth: PropTypes.object.isRequired,
+  match: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = state => ({
