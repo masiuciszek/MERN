@@ -9,6 +9,7 @@ import { getProfileById } from '../../actions/profile';
 import ProfileAbout from './ProfileAbout';
 import ProfileExperience from './ProfileExperience';
 import ProfileEducation from './ProfileEducation';
+import ProfileGithub from './ProfileGithub';
 
 const Profile = ({
   getProfileById,
@@ -70,6 +71,9 @@ const Profile = ({
                 </>
               )}
             </div>
+            {profile.githubusername && (
+              <ProfileGithub username={profile.githubusername} />
+            )}
           </div>
         </>
       )}
