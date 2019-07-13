@@ -173,7 +173,7 @@ router.post(
   [
     auth,
     [
-      check('Text', 'Text is required')
+      check('text', 'Text is required')
         .not()
         .isEmpty(),
     ],
@@ -206,7 +206,6 @@ router.post(
     }
   }
 );
-
 // @route    DELETE api/posts/comment/:id/:comment_id
 // @desc     Delete comment
 // @access   Private
