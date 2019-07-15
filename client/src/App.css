@@ -1,11 +1,10 @@
 /* Global Styles */
 :root {
-  --primary-color: rgba(129, 207, 224, 1);
-  --dark-color: rgba(46, 49, 49, 1);
+  --primary-color: #17a2b8;
+  --dark-color: #343a40;
   --light-color: #f4f4f4;
-  --danger-color: rgba(240, 52, 52, 1);
-  --danger-color2: rgba(207, 0, 15, 1);
-  --success-color: rgba(46, 204, 113, 1);
+  --danger-color: #dc3545;
+  --success-color: #28a745;
 }
 
 * {
@@ -20,7 +19,6 @@ body {
   line-height: 1.6;
   background-color: #fff;
   color: #333;
-  height: 100%;
 }
 
 a {
@@ -42,13 +40,8 @@ img {
   margin: auto;
   overflow: hidden;
   padding: 0 2rem;
-  /* margin-top: 6rem;
-  margin-bottom: 3rem; */
-}
-
-/* main div to make the page not overlap */
-.main {
-  min-height: calc(100vh - 62px);
+  margin-top: 6rem;
+  margin-bottom: 3rem;
 }
 
 /* Text Styles*/
@@ -360,7 +353,6 @@ button {
   position: relative;
   background: url('./img/showcase.jpg') no-repeat center center/cover;
   height: 100vh;
-  /* height: 100%; */
 }
 
 .landing-inner {
@@ -601,30 +593,4 @@ button {
   .post button {
     padding: 0.3rem 0.4rem;
   }
-}
-
-.push-down {
-  margin-top: 4rem;
-}
-
-.navlist {
-  /* display: flex;
-  justify-content: flex-end;
-  border: 2px solid #fff;
-  width: 100%; */
-}
-
-.footer {}
-
-.footer-title {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  display: block;
-}
-
-.footer-list {
-  display: flex;
-  justify-content: space-around;
-
 }
